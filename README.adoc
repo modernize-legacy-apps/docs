@@ -1,0 +1,32 @@
+= Modernize legacy applications - Red Hat Summit 2017 Lab
+Thomas Qvarnstrom <tqvarnst@redhat.com>; James Falkner <jfalkner@redhat.com>
+
+:sectnums!:
+:toc: left
+:revnumber: 0.5
+:revdate: 2016-03-29
+
+This repository is the used to develop the 2017 Red Hat Summit lab for Appliction Development. The main authors of _{doctitle}_ is *{author}*, Red Hat and *{author_2}*, Red Hat and the current version ({revnumber}) was last updated on {revdate}.
+
+== Lab Overview
+
+[cols="1,4", options="header"]
+|===
+2+|  Details
+| Technology/Product | Red Hat JBoss Enterprise Application Platform 7, WildFly Swarm, Red Hat OpenShift Container Platform
+| Difficulty | 2
+| Time | 2 hours
+| Prerequisites | An understanding of Java EE application development
+|===
+
+
+== Introduction
+
+Modern development using microservices architecture, containerized infrastructure and DevOps principles are much more effective than the legacy way to develop and maintain applications. In this hands on lab you will learn how to modernize an existing legacy application to a modern platform like WildFly Swarm on OpenShift Container Platform, and using modern development processes with pipeline development.
+
+This is a self-paced lab, aimed at developers.
+
+Here is a short list for the available exercises:
+
+* link:exercise1.adoc[Exercise 1 - Deploying an monolith application into OpenShift Container Platform]
+
