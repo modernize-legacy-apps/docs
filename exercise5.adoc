@@ -1,0 +1,65 @@
+== Exercise 5 - Title
+
+
+=== What you will learn
+
+Participants will learn how to:
+
+1. Skill one
+2. Skill two
+
+
+=== Background information
+
+Background information goes here.
+
+=== Setup the development environment
+
+In this exercise we will ...
+
+Step 1 - Example step::
++
+Example text
++
+[source,bash]
+----
+cd ~/example-bash
+unzip ~/some.zip
+----
++
+NOTE: Example Note
+
+Step 1.1 - Example sub step:::
+
+Example text
++
+[source,java]
+----
+import org.some.example.java.code;
+
+public ExampleClass {
+    public static void main(String[] args) {
+        ...
+    }
+}
+----
++
+WARNING: Example warning
++
+Example image:
++
+image::https://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg["Just another example",250]
+
+'''
+
+
+=== Summary
+
+In this exercise you have learned how to ...
+
+
+=== Links
+
+For more information, please have a look at the following articles and documents:
+
+* http://somelink.org[Example link]

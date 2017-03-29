@@ -29,4 +29,9 @@ This is a self-paced lab, aimed at developers.
 Here is a short list for the available exercises:
 
 * link:exercise1.adoc[Exercise 1 - Deploying an monolith application into OpenShift Container Platform]
+* link:exercise2.adoc[Exercise 2 - ]
+* link:exercise3.adoc[Exercise 3 - ]
+* link:exercise4.adoc[Exercise 4 - ]
+* link:exercise5.adoc[Exercise 5 - ]
+* link:exercise6.adoc[Exercise 6 - ]
 
