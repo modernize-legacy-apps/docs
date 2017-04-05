@@ -241,6 +241,11 @@ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -T student@$ip <
 
     echo "[GUEST] Login in to openshift as developer"
     oc login -u developer -p developer
+    
+    for image in $(oc get is -n openshift | grep "^jboss" | awk '{print $2}')
+    do
+      docker pull $image
+    done
 
 EOSSH
 
