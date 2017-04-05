@@ -208,9 +208,26 @@ echo "[HOST] Starting oc-cluster and importing xpaas images"
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -T student@$ip <<'EOSSH'    
     mkdir -p ~/projects
 
-    echo "[GUEST] Downloading monolith project"
-    curl -s -L -o /tmp/monolith.zip https://github.com/coolstore/monolith/archive/master.zip && unzip -q -d ~/projects/ /tmp/monolith.zip && mv ~/projects/monolith-master ~/projects/monolith
-
+    GITHUB_ORG=https://github.com/modernize-legacy-apps
+  
+    for repo in {monolith,inventory,gateway,catalog}
+    do
+      echo "[GUEST] Downloading $repo project"
+      curl -s -L -o /tmp/$repo.zip $GITHUB_ORG/$repo/archive/master.zip && \
+      unzip -q -d ~/projects/ /tmp/$repo.zip && \
+      mv ~/projects/$repo-master ~/projects/$repo && \
+      rm -f /tmp/$repo
+    done
+    
+    for repo in {monolith,inventory,gateway,catalog}
+    do
+      mvn -q -f ~/projects/$repo/pom.xml dependency:go-offline
+      mvn -q -f ~/projects/$repo/pom.xml dependency:go-offline -Popenshift
+      mvn -q -f ~/projects/$repo/pom.xml package -Popenshift -DskipTests
+      mvn -q -f ~/projects/$repo/pom.xml fabric8:help spring-boot:help wildfly:help || true
+      mvn -q -f ~/projects/$repo/pom.xml clean
+    done
+    
     echo "[GUEST] Downloading dependencies to monolith project"
     mvn -qf ~/projects/monolith dependency:go-offline
     mvn -qf ~/projects/monolith dependency:go-offline -Popenshift
