@@ -228,18 +228,7 @@ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -T student@$ip <
       mvn -q -f ~/projects/$repo/pom.xml clean
     done
     
-    echo "[GUEST] Downloading dependencies to monolith project"
-    mvn -qf ~/projects/monolith dependency:go-offline
-    mvn -qf ~/projects/monolith dependency:go-offline -Popenshift
-
-    echo "[GUEST] Downloading inventory project"
-    curl -s -L -o /tmp/inventory.zip https://github.com/coolstore/inventory-wfswarm/archive/master.zip && unzip -q -d ~/projects/ /tmp/inventory.zip && mv ~/projects/inventory-wfswarm-master ~/projects/inventory
-
-    echo "[GUEST] Downloading dependencies for the inventory project"
-    mvn -qf ~/projects/inventory dependency:go-offline
-    mvn -qf ~/projects/inventory dependency:go-offline -Popenshift
-
-
+   
     echo "[GUEST] Starting OpenShift Cluster"
     oc-cluster up
     sleep 5
