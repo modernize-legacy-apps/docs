@@ -26,12 +26,7 @@ Modern development using microservices architecture, containerized infrastructur
 
 This is a self-paced lab, aimed at developers.
 
-Here is a short list for the available exercises:
+The link:lab-guide.pdf[lab guide] are handouts to participants and contains links for references etc.
 
-* link:exercise1.adoc[Exercise 1 - Deploying an monolith application into OpenShift Container Platform]
-* link:exercise2.adoc[Exercise 2 - ]
-* link:exercise3.adoc[Exercise 3 - ]
-* link:exercise4.adoc[Exercise 4 - ]
-* link:exercise5.adoc[Exercise 5 - ]
-* link:exercise6.adoc[Exercise 6 - ]
+The link:lab-instructions.pdf[lab instructions] contains the detailed instructions for how to run the lab.  
 
